@@ -62,43 +62,44 @@ key[13].onclick = function() {
     titles[3].innerHTML = Math.floor(100 * (stuff[4] / stuff[6])) / 100
 }
 key[0].onclick = function() {
-    num.value = Number(String(num.value) + 0)
+    num.value = Number(String(num.value) + '0')
 }
 key[1].onclick = function() {
-    num.value = Number(String(num.value) + 1)
+    num.value = Number(String(num.value) + '1')
 }
 key[2].onclick = function() {
-    num.value = Number(String(num.value) + 2)
+    num.value = Number(String(num.value) + '2')
 }
 key[3].onclick = function() {
-    num.value = Number(String(num.value) + 3)
+    num.value = Number(String(num.value) + '3')
 }
 key[4].onclick = function() {
-    num.value = Number(String(num.value) + 4)
+    num.value = Number(String(num.value) + '4')
 }
 key[5].onclick = function() {
-    num.value = Number(String(num.value) + 5)
+    num.value = Number(String(num.value) + '5')
 }
 key[6].onclick = function() {
-    num.value = Number(String(num.value) + 6)
+    num.value = Number(String(num.value) + '6')
 }
 key[7].onclick = function() {
-    num.value = Number(String(num.value) + 7)
+    num.value = Number(String(num.value) + '7')
 }
 key[8].onclick = function() {
-    num.value = Number(String(num.value) + 8)
+    num.value = Number(String(num.value) + '8')
 }
 key[9].onclick = function() {
-    num.value = Number(String(num.value) + 9)
+    num.value = Number(String(num.value) + '9')
 }
 key[11].onclick = function() {
-    num.value *= -1
     if (num.value == '') {
         num.value = '-'
+    } else {
+        num.value = String(Number(num.value) * -1)
     }
 }
 key[12].onclick = function() {
-    num.value = Number(String(num.value).substring(0, String(num.value).length - 1))
+    num.value = String(num.value).substring(0, String(num.value).length - 1)
 }
 key[14].onclick = function() {
     stuff[5] += 1
@@ -106,4 +107,10 @@ key[14].onclick = function() {
 
     num.value = ''
     setq(maxnum)
+}
+key[10].onclick = function() {
+    if (num.value == '') {
+        num.value == '0.'
+    }
+    num.value = String(num.value) + '.'
 }
