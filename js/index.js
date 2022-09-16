@@ -1,8 +1,9 @@
 const q = [document.getElementById('part1'), document.getElementById('part2'), document.getElementById('part3')]
     // num 1 , operator , num 2 , ans , correct ,wrong, total
 let stuff = [0, 0, 0, 0, 0, 0, 0]
-const operators = ['+', '-']
+const operators = ['+', '-', 'X', '/']
 const num = document.getElementById('in')
+const maxnum = prompt("enter difficulty \n 1-100") * 12
 const key = [document.getElementById('0'),
     document.getElementById('1'),
     document.getElementById('2'),
@@ -19,30 +20,35 @@ const key = [document.getElementById('0'),
     document.getElementById('_/'),
     document.getElementById('redo'),
 ]
+const op = prompt('operations\n 1 - addition \n 2 - addition + subtraction \n 3 - addition + subrtaction + multiplaction \n 4 - all four operations \n division is to 2dp')
 
+function setq(diff) {
 
-function setq() {
-
-    stuff[0] = Math.floor(Math.random() * 100);
-    stuff[1] = Math.floor(Math.random() * 2);
-    stuff[2] = Math.floor(Math.random() * 100);
+    stuff[0] = Math.floor(Math.random() * diff);
+    stuff[1] = Math.floor(Math.random() * op);
+    stuff[2] = Math.floor(Math.random() * diff);
     q[0].innerHTML = stuff[0]
     q[1].innerHTML = operators[stuff[1]]
     q[2].innerHTML = stuff[2]
     if (stuff[1] == 0) {
         stuff[3] = stuff[0] + stuff[2]
-    } else {
+    } else if (stuff[1] == 1) {
         stuff[3] = stuff[0] - stuff[2]
+    } else if (stuff[1] == 2) {
+        stuff[3] = stuff[0] * stuff[2]
+    } else {
+        stuff[3] = Math.round((stuff[0] * stuff[2]) * 100) / 100
     }
     console.log(stuff[3])
 }
 let titles = [document.getElementById('correct'), document.getElementById('wrong'), document.getElementById('total'), document.getElementById('accuracy')]
 
-setq()
+setq(maxnum)
+
 key[13].onclick = function() {
     if (num.value == stuff[3]) {
         num.value = ''
-        setq()
+        setq(maxnum)
         stuff[4] += 1
         stuff[6] += 1
     } else {
@@ -95,6 +101,9 @@ key[12].onclick = function() {
     num.value = Number(String(num.value).substring(0, String(num.value).length - 1))
 }
 key[14].onclick = function() {
+    stuff[5] += 1
+    stuff[6] += 1
+
     num.value = ''
-    setq()
+    setq(maxnum)
 }
