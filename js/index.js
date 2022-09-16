@@ -45,16 +45,26 @@ let titles = [document.getElementById('correct'), document.getElementById('wrong
 
 setq(maxnum)
 
+function b() {
+    num.style.border = '1px solid black'
+    num.style.borderRadius = '0px'
+}
 key[13].onclick = function() {
     if (num.value == stuff[3]) {
         num.value = ''
         setq(maxnum)
         stuff[4] += 1
         stuff[6] += 1
+        num.style.border = '5px solid green'
+        num.style.borderRadius = '10px'
+        window.setTimeout(b, 400);
     } else {
 
         stuff[5] += 1
         stuff[6] += 1
+        num.style.border = '5px solid red'
+        num.style.borderRadius = '10px'
+        window.setTimeout(b, 400);
     }
     titles[0].innerHTML = stuff[4]
     titles[1].innerHTML = stuff[5]
