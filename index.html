@@ -13,6 +13,9 @@
 
 <body>
     <div class="wrapper">
+        <div class="title">
+            maths quiz by oliver correct:
+            <span id="correct">0</span> Wrong: <span id="wrong">0</span> Total <span id="total">0</span></div>
         <div class="grid">
             <div class="content">
 
@@ -47,8 +50,8 @@
 </body>
 <script>
     const q = [document.getElementById('part1'), document.getElementById('part2'), document.getElementById('part3')]
-        // num 1 , operator , num 2 , ans
-    let stuff = [0, 0, 0, 0, ]
+        // num 1 , operator , num 2 , ans , correct ,wrong, total
+    let stuff = [0, 0, 0, 0, 0, 0, 0]
     const operators = ['+', '-']
     const num = document.getElementById('in')
     const key = [document.getElementById('0'),
@@ -84,16 +87,23 @@
         }
         console.log(stuff[3])
     }
+    let titles = [document.getElementById('correct'), document.getElementById('wrong'), document.getElementById('total')]
 
     setq()
     key[13].onclick = function() {
         if (num.value == stuff[3]) {
             num.value = ''
-            alert('correct')
             setq()
+            stuff[4] += 1
+            stuff[6] += 1
         } else {
-            alert('wrong')
+
+            stuff[5] += 1
+            stuff[6] += 1
         }
+        titles[0].innerHTML = stuff[4]
+        titles[1].innerHTML = stuff[5]
+        titles[2].innerHTML = stuff[6]
     }
     key[0].onclick = function() {
         num.value = Number(String(num.value) + 0)

@@ -1,4 +1,4 @@
-@media screen and (min-width:1001px) {
+@media screen and (max-width:1000px) {
     body {
         background: rgb(255, 255, 255);
     }
@@ -24,10 +24,29 @@
         width: 25%;
         max-width: 25vw;
         height: calc(10cm / 4);
-        max-height: calc(((100vh/9)*4)/4)
+        max-height: calc(((100vh/9)*4)/4);
+        border: 0.5px solid #cecece;
     }
     .zero {
         width: 50%;
         max-width: 50vw;
+    }
+    .num {
+        background-color: white;
+    }
+    .content {
+        display: flex;
+        align-items: center
+    }
+    .space {
+        margin: auto;
+        font-size: 40px;
+        width: 100vw;
+        text-align: center;
+    }
+    input {
+        height: 40px;
+        font-size: 40px;
+        width: 40vw;
     }
 }
