@@ -94,3 +94,7 @@ key[11].onclick = function() {
 key[12].onclick = function() {
     num.value = Number(String(num.value).substring(0, String(num.value).length - 1))
 }
+key[14].onclick = function() {
+    num.value = ''
+    setq()
+}
