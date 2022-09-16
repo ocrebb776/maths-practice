@@ -27,6 +27,7 @@
                 max-height: calc(((100vh/9)*4)/4)
             }
             .zero {
-                width: 50%
+                width: 50%;
+                max-width: 50vw;
             }
         }
