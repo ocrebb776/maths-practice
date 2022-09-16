@@ -50,10 +50,11 @@
                 width: 40vw;
             }
             .title {
-                position: absolute;
+                position: sticky;
                 top: 0px;
                 width: 100vw;
                 padding: 10px;
                 background-color: rgb(228, 228, 228);
+                text-align: center;
             }
         }
