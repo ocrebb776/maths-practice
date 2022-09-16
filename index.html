@@ -8,13 +8,16 @@
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/desktop.css">
     <link rel="stylesheet" href="css/mobile.css">
+    <script src="js/index.js"></script>
 </head>
 
 <body>
     <div class="wrapper">
         <div class="grid">
             <div class="content">
-                content
+                <div class="title">Maths practice by oliver</div>
+                <div class="space">
+                    <span id="part1">error</span> <span id="part2">error</span> <span id="part3">error</span> = <input type="number"></div>
             </div>
             <div class="keyboard">
                 <div class="keys">
@@ -22,25 +25,42 @@
                     <button class="key num" id="1">1</button>
                     <button class="key num" id="2">2</button>
                     <button class="key num" id="3">3</button>
-                    <button class="key num" id="-">-</button>
+                    <button class="key" id="-">-</button>
                     <!-- Row Two-->
                     <button class="key num" id="4">4</button>
                     <button class="key num" id="5">5</button>
                     <button class="key num" id="6">6</button>
-                    <button class="key num" id="<-"><-</button>
+                    <button class="key" id="<-"><-</button>
                     <!-- Row Three-->
                     <button class="key num" id="7">7</button>
                     <button class="key num" id="8">8</button>
                     <button class="key num" id="9">9</button>
-                    <button class="key num" id="_/">_/</button>
+                    <button class="key " id="_/">_/</button>
                     <!-- Row Four-->
-                    <button class="key num" id="0">0</button>
+                    <button class="key num zero" id="0">0</button>
                     <button class="key num" id=".">.</button>
-                    <button class="key num" id="redo">redo</button>
+                    <button class="key" id="redo">redo</button>
                 </div>
             </div>
         </div>
     </div>
 </body>
+<script>
+    const q = [document.getElementById('part1'), document.getElementById('part2'), document.getElementById('part3')]
+    let stuff = [0, 0, 0]
+    const operators = ['+', '-']
+
+
+    function setq() {
+        stuff[0] = Math.floor(Math.random() * 100);
+        stuff[1] = Math.floor(Math.random() * 2);
+        stuff[2] = Math.floor(Math.random() * 100);
+        q[0].innerHTML = stuff[0]
+        q[1].innerHTML = operators[stuff[1]]
+        q[2].innerHTML = stuff[2]
+
+    }
+    setq()
+</script>
 
 </html>

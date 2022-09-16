@@ -1,3 +1,33 @@
-body {
-    background: rgb(0, 255, 0);
+@media screen and (min-width:1001px) {
+    body {
+        background: rgb(255, 255, 255);
+    }
+    .grid {
+        display: grid;
+        grid-template-rows: 5fr 4fr;
+    }
+    .keyboard {
+        background-color: #cecece;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+    .keys {
+        font-size: 0px;
+        width: 10cm;
+        max-width: 100%;
+        min-height: 10cm;
+        max-height: 100%;
+    }
+    .key {
+        width: 25%;
+        max-width: 25vw;
+        height: calc(10cm / 4);
+        max-height: calc(((100vh/9)*4)/4)
+    }
+    .zero {
+        width: 50%;
+        max-width: 50vw;
+    }
 }
