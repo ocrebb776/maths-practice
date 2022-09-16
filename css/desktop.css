@@ -1,4 +1,4 @@
-@media screen and (max-width:1000px) {
+@media screen and (min-width:1000px) {
     body {
         background: rgb(255, 255, 255);
     }
@@ -48,5 +48,12 @@
         height: 40px;
         font-size: 40px;
         width: 40vw;
+    }
+    .title {
+        position: absolute;
+        top: 0px;
+        width: 100vw;
+        padding: 10px;
+        background-color: rgb(228, 228, 228);
     }
 }
