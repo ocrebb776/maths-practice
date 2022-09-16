@@ -42,6 +42,7 @@
                 margin: auto;
                 font-size: 40px;
                 width: 100vw;
+                text-align: center;
             }
             input {
                 height: 40px;
