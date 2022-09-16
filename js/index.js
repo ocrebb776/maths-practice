@@ -37,7 +37,7 @@ function setq(diff) {
     } else if (stuff[1] == 2) {
         stuff[3] = stuff[0] * stuff[2]
     } else {
-        stuff[3] = Math.round((stuff[0] * stuff[2]) * 100) / 100
+        stuff[3] = Math.round((stuff[0] / stuff[2]) * 100) / 100
     }
     console.log(stuff[3])
 }
