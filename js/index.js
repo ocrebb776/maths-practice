@@ -1,7 +1,7 @@
 const q = [document.getElementById('part1'), document.getElementById('part2'), document.getElementById('part3')]
     // num 1 , operator , num 2 , ans , correct ,wrong, total
 let stuff = [0, 0, 0, 0, 0, 0, 0]
-const operators = ['+', '-', 'X', '/']
+const operators = ['+', '-', 'X', '÷']
 const num = document.getElementById('in')
     /*
     const maxnum = prompt("enter difficulty \n 1-100") * 12
@@ -62,6 +62,10 @@ function setq(diff) {
         stuff[3] = stuff[0] * stuff[2]
     } else {
         stuff[3] = Math.trunc(stuff[0] / stuff[2])
+        if (stuff[2] == 0) {
+            stuff[3] = Math.trunc(stuff[0] / (stuff[2] + 1))
+            q[2].innerHTML = stuff[2] + 1
+        }
     }
     console.log(stuff[3])
 }
