@@ -44,15 +44,60 @@
         width: 100vw;
         text-align: center;
     }
-    input {
+    content input {
         height: 40px;
         font-size: 40px;
         width: 40vw;
     }
-    .title {
-        width: 100vw;
+    .popup {
+        position: absolute;
+        width: 90vw;
+        background-color: #fff;
+        margin: auto;
+        top: 15vh;
+        left: 5vw;
         padding: 10px;
-        background-color: rgb(228, 228, 228);
+        border-radius: 10vw;
+        min-height: 70vh;
         text-align: center;
+        font-size: 40px;
+    }
+    .popup input[type=range] {
+        height: 40px;
+        font-size: 40px;
+        width: 40vw;
+        max-width: 100%;
+    }
+    .popup input[type=checkbox] {
+        height: 50px;
+        font-size: 50px;
+        width: 50px;
+        max-width: 20vw;
+    }
+    .popup button {
+        font-size: 40px;
+        background-color: #ffff;
+        border: none;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 0px 10px rgb(158, 158, 158);
+    }
+    .popup button:active {
+        box-shadow: 0px 0px 0px 7px rgb(158, 158, 158);
+        transform: scale(0.7);
+    }
+    .title button {
+        position: absolute;
+        right: 10px;
+        font-size: 20px;
+        background-color: #ffff;
+        border: none;
+        padding: 5px;
+        border-radius: 4px;
+        box-shadow: 0px 0px 0px 10px rgb(158, 158, 158);
+    }
+    .title button:active {
+        box-shadow: 0px 0px 0px 7px rgb(158, 158, 158);
+        transform: scale(0.7);
     }
 }

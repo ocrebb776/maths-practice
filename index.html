@@ -13,10 +13,18 @@
 
 <body>
     <div class="wrapper">
-
+        <div class="popup" id="diffpop">
+            <h1>set Difficulty</h1>
+            <input type="range" id="dif" value="1" max="100" min="1" step="1"><span id="diffs">0</span>
+            <br>Addition : <input type="checkbox" id="add">
+            <br>Subtraction : <input type="checkbox" id="sub">
+            <br>Multiplication : <input type="checkbox" id="multi">
+            <br>division(floor) : <input type="checkbox" id="div"><br><br>
+            <button onclick="diff()">Confirm</button>
+        </div>
         <div class="grid">
             <div class="title">
-                <h3>maths quiz </h3><b>by oliver</b><br> correct:
+                <h3>maths quiz </h3><b>by oliver</b> <button onclick="document.getElementById('diffpop').style.display = 'block'">change difficulty</button><br> correct:
                 <span id="correct">0</span> Wrong: <span id="wrong">0</span> Total <span id="total">0</span> Accuracy :<span id="accuracy">0</span>
             </div>
             <div class="content">

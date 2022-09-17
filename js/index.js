@@ -3,7 +3,28 @@ const q = [document.getElementById('part1'), document.getElementById('part2'), d
 let stuff = [0, 0, 0, 0, 0, 0, 0]
 const operators = ['+', '-', 'X', '/']
 const num = document.getElementById('in')
-const maxnum = prompt("enter difficulty \n 1-100") * 12
+    /*
+    const maxnum = prompt("enter difficulty \n 1-100") * 12
+    const op = prompt('operations\n 1 - addition \n 2 - addition + subtraction \n 3 - addition + subrtaction + multiplaction \n 4 - all four operations \n division is to 2dp')
+    */
+const form = [document.getElementById('dif'), document.getElementById('diffs'), document.getElementById('add'), document.getElementById('sub'), document.getElementById('multi'), document.getElementById('div')]
+form[0].oninput = function() {
+    form[1].innerHTML = form[0].value
+}
+let maxnum
+let op = [0, 0, 0, 0]
+
+function diff() {
+    maxnum = form[0].value * 12
+
+    op[0] = form[2].checked
+    op[1] = form[3].checked
+    op[2] = form[4].checked
+    op[3] = form[5].checked
+    console.log(op)
+    document.getElementById('diffpop').style.display = 'none'
+    setq(maxnum)
+}
 const key = [document.getElementById('0'),
     document.getElementById('1'),
     document.getElementById('2'),
@@ -20,16 +41,19 @@ const key = [document.getElementById('0'),
     document.getElementById('_/'),
     document.getElementById('redo'),
 ]
-const op = prompt('operations\n 1 - addition \n 2 - addition + subtraction \n 3 - addition + subrtaction + multiplaction \n 4 - all four operations \n division is to 2dp')
 
 function setq(diff) {
 
     stuff[0] = Math.floor(Math.random() * diff);
-    stuff[1] = Math.floor(Math.random() * op);
+    stuff[1] = Math.floor(Math.random() * 4);
+    while (op[stuff[1]] !== true) {
+        stuff[1] = Math.floor(Math.random() * 4);
+    }
     stuff[2] = Math.floor(Math.random() * diff);
     q[0].innerHTML = stuff[0]
     q[1].innerHTML = operators[stuff[1]]
     q[2].innerHTML = stuff[2]
+        // if operation is 0 = +     1 = -          2 = *    3 = /
     if (stuff[1] == 0) {
         stuff[3] = stuff[0] + stuff[2]
     } else if (stuff[1] == 1) {
@@ -37,13 +61,12 @@ function setq(diff) {
     } else if (stuff[1] == 2) {
         stuff[3] = stuff[0] * stuff[2]
     } else {
-        stuff[3] = Math.round((stuff[0] / stuff[2]) * 100) / 100
+        stuff[3] = Math.trunc(stuff[0] / stuff[2])
     }
     console.log(stuff[3])
 }
 let titles = [document.getElementById('correct'), document.getElementById('wrong'), document.getElementById('total'), document.getElementById('accuracy')]
 
-setq(maxnum)
 
 function b() {
     num.style.border = '1px solid black'
