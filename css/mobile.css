@@ -87,6 +87,7 @@
         transform: scale(0.7);
     }
     .title button {
+        position: absolute;
         margin-top: 10px;
         right: 10px;
         font-size: 10px;
