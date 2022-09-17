@@ -1,11 +1,4 @@
 @media screen and (min-width:1000px) {
-    body {
-        background: rgb(255, 255, 255);
-    }
-    .grid {
-        display: grid;
-        grid-template-rows: 5fr 4fr;
-    }
     .keyboard {
         background-color: #cecece;
         display: flex;
@@ -50,8 +43,6 @@
         width: 40vw;
     }
     .title {
-        position: absolute;
-        top: 0px;
         width: 100vw;
         padding: 10px;
         background-color: rgb(228, 228, 228);
