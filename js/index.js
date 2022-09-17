@@ -117,6 +117,10 @@ key[14].onclick = function() {
 
     num.value = ''
     setq(maxnum)
+    titles[0].innerHTML = stuff[4]
+    titles[1].innerHTML = stuff[5]
+    titles[2].innerHTML = stuff[6]
+    titles[3].innerHTML = Math.floor(100 * (stuff[4] / stuff[6])) / 100
 }
 key[10].onclick = function() {
     if (num.value == '') {
