@@ -61,13 +61,16 @@ function setq(diff) {
         stuff[3] = stuff[0] - stuff[2]
     } else if (stuff[1] == 2) {
         stuff[3] = stuff[0] * stuff[2]
-    } else {
-        stuff[3] = Math.trunc(stuff[0] / stuff[2])
-        if (stuff[2] == 0) {
-            stuff[3] = Math.trunc(stuff[0] / (stuff[2] + 1))
-            q[2].innerHTML = stuff[2] + 1
-        }
+    } else { //division
+        stuff[3] = stuff[0]
+        stuff[2] += 1
+        stuff[0] = stuff[0] * stuff[2]
+
+
     }
+    q[0].innerHTML = stuff[0]
+    q[1].innerHTML = operators[stuff[1]]
+    q[2].innerHTML = stuff[2]
     console.log(stuff[3])
 }
 let titles = [document.getElementById('correct'), document.getElementById('wrong'), document.getElementById('total'), document.getElementById('accuracy')]
