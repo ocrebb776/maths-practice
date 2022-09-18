@@ -71,8 +71,9 @@ function setq(diff) {
         stuff[2] += 1
         stuff[0] = stuff[0] * stuff[2]
     } else if (stuff[1] = 4) {
-        stuff[0] = Math.floor(Math.random() * 12) + 1;
-        stuff[2] = Math.floor(Math.random() * 3) + 1;
+        stuff[0] = Math.floor(Math.random() * 12);
+        stuff[2] = Math.floor(Math.random() * 3);
+        stuff[0] += 1
         stuff[3] = stuff[0] ** stuff[2]
 
     }
