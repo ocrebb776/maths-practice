@@ -12,7 +12,7 @@ form[0].oninput = function() {
     form[1].innerHTML = form[0].value
 }
 let maxnum
-let op = [0, 0, 0, 0]
+let op = [true, 0, 0, 0]
 
 function diff() {
     maxnum = form[0].value * 12
@@ -43,11 +43,12 @@ const key = [document.getElementById('0'),
 ]
 
 function setq(diff) {
-
+    var count = 0
     stuff[0] = Math.floor(Math.random() * diff);
     stuff[1] = Math.floor(Math.random() * 4);
-    while (op[stuff[1]] !== true) {
+    while (op[stuff[1]] !== true && count < 100) {
         stuff[1] = Math.floor(Math.random() * 4);
+        count++
     }
     stuff[2] = Math.floor(Math.random() * diff);
     q[0].innerHTML = stuff[0]
@@ -99,6 +100,10 @@ key[13].onclick = function() {
     titles[3].innerHTML = Math.floor(100 * (stuff[4] / stuff[6])) / 100
 }
 key[0].onclick = function() {
+    num.value = Number(String(num.value) + '0')
+}
+
+function z() {
     num.value = Number(String(num.value) + '0')
 }
 key[1].onclick = function() {

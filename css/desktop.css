@@ -1,4 +1,4 @@
-@media screen and (min-width:1000px) {
+@media screen and (min-width:401px) {
     .keyboard {
         background-color: #cecece;
         display: flex;
@@ -10,18 +10,25 @@
         font-size: 0px;
         width: 10cm;
         max-width: 100%;
+        /*
         min-height: 10cm;
         max-height: 100%;
+        */
+        height: 10cm;
+        max-height: calc((100vh / 18)*9);
+        background-color: red;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
     }
     .key {
-        width: 25%;
         max-width: 25vw;
-        height: calc(10cm / 4);
-        max-height: calc(((100vh/9)*4)/4);
+        height: 100%;
+        /*max-height: calc(((100vh/9)*4)/4);*/
         border: 0.5px solid #cecece;
     }
     .zero {
-        width: 50%;
+        width: 200%;
         max-width: 50vw;
     }
     .num {
